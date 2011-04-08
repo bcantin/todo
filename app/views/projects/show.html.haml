@@ -1,6 +1,8 @@
 %h2= @project.title
 
-%p= @project.description
+%p.description
+  = @project.description
+  = link_to 'Notes', '#'
 
 %h3 Stuff To Do
 %ul

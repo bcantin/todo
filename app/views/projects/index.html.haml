@@ -2,9 +2,10 @@
 
 - @projects.each do |project|
   %h2= link_to project.title, project
+
   %p.description
     = project.description
     = link_to 'Edit', edit_project_path(project)
-    
+
 %hr
 = link_to 'New Project', new_project_path
