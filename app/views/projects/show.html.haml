@@ -1,0 +1,24 @@
+%h2= @project.title
+
+%p= @project.description
+
+%h3 Stuff To Do
+%ul
+  - @project.tasks.incomplete.each do |task|
+    %li
+      = task.description
+      = button_to 'Complete', complete_task_path(@project.id, task.id)
+
+%h3 Completed
+%ul
+  - @project.tasks.completed.each do |task|
+    %li
+      .completed
+        = task.description
+
+%hr
+
+= form_for [@project, @task] do |f|
+  %p
+    = f.text_field :description
+    = f.submit

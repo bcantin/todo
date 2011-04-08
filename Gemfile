@@ -2,7 +2,11 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.6'
 gem 'sqlite3'
+gem 'jquery-rails'
 
-# group :development, :test do
-#   gem 'webrat'
-# end
+gem 'haml'
+
+group :development, :test do
+  gem 'annotate'
+  
+end

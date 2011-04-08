@@ -1,0 +1,11 @@
+= form_for @project do |f|
+
+  %label
+    Title:
+    %p= f.text_field :title
+  
+  %label
+    Description:
+    %p= f.text_field :description
+  
+  %p= f.submit

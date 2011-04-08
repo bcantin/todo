@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %title TODO
+    = stylesheet_link_tag 'sample'
+    = javascript_include_tag :defaults
+    = csrf_meta_tag
+  %body
+    
+    #header
+      = link_to 'PROJECTS', projects_path
+      
+    = yield
+    
