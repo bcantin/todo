@@ -1,0 +1,20 @@
+%h2= @project.title
+
+%p.description
+  = @project.description
+  = link_to 'Tasks', @project
+
+%h3 Notes
+%ul
+  - @project.notes.each do |note|
+    %li.links
+      = note.description
+      = link_to 'destroy', project_note_path(@project, note), :confirm => 'Destroy Note ?', :method => :delete
+      = link_to 'edit', edit_project_note_path(@project, note)
+
+%hr
+
+= form_for [@project, @note] do |f|
+  %p
+    = f.text_area :description
+    = f.submit

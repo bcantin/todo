@@ -10,5 +10,11 @@
     #header
       = link_to 'PROJECTS', projects_path
       
+    - [:notice, :error, :message].each do |key|
+      - unless flash[key].blank?
+        #flash
+          %div{:id => "flash_#{key}"}
+            = flash[key]
+            
     = yield
     
