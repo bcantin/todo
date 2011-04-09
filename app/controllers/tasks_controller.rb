@@ -20,7 +20,7 @@ class TasksController < ApplicationController
     
     @task.completed = true
     @task.save
-    
+    flash[:notice] = 'Task Completed'
     redirect_to @project
   end
   

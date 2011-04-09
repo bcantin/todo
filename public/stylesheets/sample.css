@@ -86,15 +86,17 @@ textarea {
   margin: 5px 0; }
 
 #flash_notice {
-  background-color: #65ce6f;
-  border: 1px solid #00cf13;
+  background-color: #a9f16c;
+  border-top: 1px solid #00cf13;
+  border-bottom: 1px solid #00cf13;
   font-weight: bold;
   text-align: center;
   padding: 5px 0; }
 
 #flash_error, .validation-error {
-  background-color: #ff7272;
-  border: 1px solid #ff1515;
+  background-color: #ff9595;
+  border-top: 1px solid #ff1515;
+  border-bottom: 1px solid #ff1515;
   font-weight: bold;
   text-align: center;
   padding: 5px 0px; }
