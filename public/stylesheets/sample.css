@@ -113,6 +113,8 @@ li {
     text-decoration: line-through;
     color: #aaaaaa; }
 
+li.task img {
+  vertical-align: text-top; }
 li.task a {
   float: right;
   margin-left: 5px;
