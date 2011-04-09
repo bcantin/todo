@@ -1,7 +1,6 @@
 == Welcome to TODO
 
-Do you need a fully functional TODO app that will keep track of what you are doing, the time 
-spent on tasks and the ability to forcast how long future tasks will take?
+Do you need a fully functional TODO app that will keep track of what you are doing, the time spent on tasks and the ability to forcast how long future tasks will take?
 
 Then this is not for you.
 
@@ -15,3 +14,10 @@ That's it... move along... nothing more to see...
 - created in a few hours
 - you want more?  fork you... err fork this project and add stuff yerself!
 
+= Simple Installation Instructions
+
+  git clone git@github.com:bcantin/todo.git
+  cd todo
+  bundle
+  
+  
