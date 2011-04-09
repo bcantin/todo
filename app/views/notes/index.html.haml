@@ -9,8 +9,8 @@
   - @project.notes.each do |note|
     %li.links
       = note.description
-      = link_to 'destroy', project_note_path(@project, note), :confirm => 'Destroy Note ?', :method => :delete
-      = link_to 'edit', edit_project_note_path(@project, note)
+      = link_to image_tag('cross.png'), project_note_path(@project, note), :confirm => 'Destroy Note ?', :method => :delete
+      = link_to image_tag('application_edit.png'), edit_project_note_path(@project, note)
 
 %hr
 

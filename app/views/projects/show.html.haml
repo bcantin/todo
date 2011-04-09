@@ -5,12 +5,13 @@
   = link_to 'Notes', project_notes_path(@project)
 
 %h3 Stuff To Do
+
 %ul
   - @project.tasks.incomplete.each do |task|
-    %li
+    %li.links
       = task.description
-      = button_to 'Complete', complete_task_path(@project.id, task.id)
-
+      = link_to image_tag('accept.png'), complete_task_path(@project.id, task.id), :method => :post
+      
 %h3 Completed
 %ul
   - @project.tasks.completed.each do |task|
