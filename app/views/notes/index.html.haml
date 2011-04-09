@@ -14,7 +14,4 @@
 
 %hr
 
-= form_for [@project, @note] do |f|
-  %p
-    = f.text_area :description
-    = f.submit
+= render :partial => 'form'
