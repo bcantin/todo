@@ -1,0 +1,27 @@
+<% content_for :javascript do %>
+  <%= javascript_tag do %>
+    // Sorting the list
+    
+    $(document).ready(function(){
+      $('#tasks').sortable({
+        axis: 'y',
+        dropOnEmpty: false,
+        handle: '.handle',
+        cursor: 'crosshair',
+        items: 'li',
+        opacity: 0.4,
+        scroll: true,
+        update: function(){
+          $.ajax({
+            type: 'post',
+            data: $('#tasks').sortable('serialize'),
+            dataType: 'script',
+            complete: function(request){
+              $('#tasks').effect('highlight');
+            },
+            url: "/projects/" + <%= @project.id %> + "/tasks/sort"})
+        }
+      });
+    });
+  <% end %>
+<% end %>

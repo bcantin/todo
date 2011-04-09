@@ -33,4 +33,11 @@ class TasksController < ApplicationController
     redirect_to @project
   end
   
+  def sort
+    @project.tasks.incomplete.each do |task|
+      task.update_attribute(:position, params['task'].index(task.id.to_s) + 1)
+    end
+    render :nothing => true
+  end
+  
 end

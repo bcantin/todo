@@ -3,8 +3,10 @@
   %head
     %title TODO
     = stylesheet_link_tag 'sample'
-    = javascript_include_tag :defaults
+    = javascript_include_tag 'jquery.min', 'jquery-ui-1.8.11.custom.min', 'rails', 'application'
     = csrf_meta_tag
+    = yield :javascript
+    
   %body
     
     #header

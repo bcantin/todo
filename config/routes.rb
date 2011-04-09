@@ -1,7 +1,9 @@
 Todo::Application.routes.draw do
   
   resources :projects do
-    resources :tasks
+    resources :tasks do
+      post :sort, on: :collection
+    end
     resources :notes
   end
   

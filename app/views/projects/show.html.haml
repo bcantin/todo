@@ -1,3 +1,5 @@
+= render 'js_content'
+
 %h2= @project.title
 
 %p.description
@@ -6,9 +8,10 @@
 
 %h3 Stuff To Do
 
-%ul
-  - @project.tasks.incomplete.each do |task|
-    %li.links
+%ul#tasks
+  - @project.tasks.sorted.incomplete.each do |task|
+    %li{:id => "task_#{task.id}", :class => "task"}
+      %span.handle [drag]
       = task.description
       = link_to image_tag('cross.png'), project_task_path(@project, task), :confirm => 'Destroy Task ?', :method => :delete
       = link_to image_tag('accept.png'), complete_task_path(@project, task), :method => :post
@@ -16,7 +19,7 @@
 %h3 Completed
 %ul
   - @project.tasks.completed.each do |task|
-    %li.links
+    %li.task
       .completed
         = task.description
         = link_to image_tag('cross.png'), project_task_path(@project, task), :confirm => 'Destroy Task ?', :method => :delete

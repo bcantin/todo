@@ -6,6 +6,8 @@ gem 'jquery-rails'
 
 gem 'haml'
 
+gem 'acts_as_list'
+
 group :development, :test do
   gem 'annotate'
   

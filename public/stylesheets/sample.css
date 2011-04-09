@@ -113,14 +113,17 @@ li {
     text-decoration: line-through;
     color: #aaaaaa; }
 
-li.links a {
+li.task a {
   float: right;
   margin-left: 5px;
   visibility: hidden; }
-li.links:hover {
+li.task:hover {
   background-color: #dddddd; }
-  li.links:hover a {
+  li.task:hover a {
     visibility: visible; }
 
 .button_to {
   display: inline-block; }
+
+.handle:hover {
+  cursor: move; }
