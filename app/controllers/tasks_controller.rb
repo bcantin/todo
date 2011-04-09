@@ -23,5 +23,14 @@ class TasksController < ApplicationController
     flash[:notice] = 'Task Completed'
     redirect_to @project
   end
+
+  def destroy
+    @task = @project.tasks.find(params[:id])
+    if @task
+      Task.destroy(@task)
+      flash[:notice] = 'Task Destroyed'
+    end
+    redirect_to @project
+  end
   
 end
