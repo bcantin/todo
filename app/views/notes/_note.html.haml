@@ -1,0 +1,4 @@
+%li{:id => "note_#{note.id}", :class => "task note"}
+  = note.description
+  = link_to image_tag('cross.png'), project_note_path(@project, note), :confirm => 'Destroy Note ?', :method => :delete, :remote => true
+  = link_to image_tag('application_edit.png'), edit_project_note_path(@project, note)

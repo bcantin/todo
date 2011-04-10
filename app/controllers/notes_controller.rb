@@ -10,12 +10,8 @@ class NotesController < ApplicationController
   
   def create
     @note = @project.notes.new(params[:note])
-    if @note.save
-      flash[:notice] = 'Note Created'
-    else
-      flash[:error] = 'Note Not Created'
-    end
-    redirect_to project_notes_path(@project)
+    @note.save
+    respond_with(@note, :layout => !request.xhr? )
   end
 
   def edit
@@ -34,11 +30,9 @@ class NotesController < ApplicationController
   
   def destroy
     @note = @project.notes.find(params[:id])
-    if @note
-      Note.destroy(@note)
-      flash[:notice] = 'Note Destroyed'
-    end
-    redirect_to project_notes_path(@project)
+      Note.destroy(@note) if @note
+      @id = params[:id]
+      respond_with(@note, :layout => !request.xhr? )
   end
 
 end
