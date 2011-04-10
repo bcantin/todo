@@ -185,9 +185,6 @@
 
     $('#facebox .close')
       .click($.facebox.close)
-      .append('<img src="'
-              + $.facebox.settings.closeImage
-              + '" class="close_image" title="close">')
   }
 
   // getPageScroll() by quirksmode.com
