@@ -1,0 +1,4 @@
+var put_path = "#notes li#note_" + <%= @id %> + " span"
+var fetch_path = "notes " + put_path
+$(put_path).load(fetch_path)
+jQuery(document).trigger('close.facebox')
