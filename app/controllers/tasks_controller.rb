@@ -12,11 +12,8 @@ class TasksController < ApplicationController
   
   def complete
     @task = @project.tasks.find(params[:id])
-    
-    @task.completed = true
-    @task.save
-    flash[:notice] = 'Task Completed'
-    redirect_to @project
+    @task.update_attribute(:completed, true)
+    respond_with(@task, :layout => !request.xhr?)
   end
 
   def destroy
