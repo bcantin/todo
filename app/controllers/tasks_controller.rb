@@ -22,11 +22,9 @@ class TasksController < ApplicationController
 
   def destroy
     @task = @project.tasks.find(params[:id])
-    if @task
-      Task.destroy(@task)
-      flash[:notice] = 'Task Destroyed'
-    end
-    redirect_to @project
+    Task.destroy(@task) if @task
+    @id = params[:id]
+    respond_with(@id, :layout => !request.xhr? )
   end
   
   def sort
