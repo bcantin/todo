@@ -20,12 +20,9 @@ class NotesController < ApplicationController
   
   def update
     @note = @project.notes.find(params[:id])
-    if @note.update_attributes(params[:note])
-      flash[:notice] = 'Note Updated'
-    else
-      flash[:error] = 'Note Note Updated'
-    end
-    redirect_to project_notes_path(@project)
+    @note.update_attributes(params[:note])
+    @id = params[:id]
+    respond_with(@note, :layout => !request.xhr? )
   end
   
   def destroy

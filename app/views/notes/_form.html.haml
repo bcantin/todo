@@ -1,5 +1,5 @@
 = form_for [@project, @note], :remote => true do |f|
   .errors
   %p
-    = f.text_field :description
+    = f.text_area :description
     = f.submit
