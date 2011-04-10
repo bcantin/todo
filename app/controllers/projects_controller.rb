@@ -23,7 +23,7 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @incomplete_tasks = @project.tasks.sorted.incomplete
-    @completed_tasks  = @project.tasks.completed
+    @completed_tasks  = @project.tasks.completed.order('updated_at DESC')
     @task = @project.tasks.new
   end
   
