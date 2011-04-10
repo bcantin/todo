@@ -115,11 +115,8 @@ ul
 li
   margin: 10px 0px
   padding: 5px
-  .completed
-    text-decoration: line-through
-    color: #aaa
 
-li.task
+li.task, li.completed
   img
     vertical-align: text-top
   a
@@ -130,7 +127,10 @@ li.task
     background-color: #ddd
     a
       visibility: visible
-  
+      
+li.completed
+  text-decoration: line-through
+
 .button_to
   display: inline-block
 

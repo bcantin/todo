@@ -5,7 +5,6 @@ class TasksController < ApplicationController
   respond_to :html, :js
   
   def create
-    # render :text => params.inspect
     @task = @project.tasks.new(params[:task])
     @task.save
     respond_with(@task, :layout => !request.xhr? )
@@ -24,7 +23,7 @@ class TasksController < ApplicationController
     @task = @project.tasks.find(params[:id])
     Task.destroy(@task) if @task
     @id = params[:id]
-    respond_with(@id, :layout => !request.xhr? )
+    respond_with(@id, :layout => !request.xhr?)
   end
   
   def sort
