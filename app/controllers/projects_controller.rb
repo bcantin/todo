@@ -22,6 +22,8 @@ class ProjectsController < ApplicationController
   
   def show
     @project = Project.find(params[:id])
+    @incomplete_tasks = @project.tasks.sorted.incomplete
+    @completed_tasks  = @project.tasks.completed
     @task = @project.tasks.new
   end
   

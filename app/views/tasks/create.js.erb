@@ -1,0 +1,25 @@
+var task_form = $('#new_task');
+
+<% if @task.errors.any? %>
+
+  // Create a list of errors
+  var errors = $('<ul />');
+
+  <% @task.errors.full_messages.each do |error| %>
+    errors.append('<li><%= escape_javascript(error) %></li>');
+  <% end %>
+
+  task_form.find('.errors').html(errors);
+
+<% else %>
+
+  $('#tasks').append("<%= escape_javascript(
+      render :partial => 'task', :locals => {:task => @task}
+    ) %>");
+  
+  $('#tasks li').last().effect('highlight');
+
+  task_form.find('input:text,textarea').val('');
+  task_form.find('.errors').empty();
+
+<% end %>

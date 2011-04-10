@@ -5,14 +5,10 @@ class TasksController < ApplicationController
   respond_to :html, :js
   
   def create
-    @task   = @project.tasks.new(params[:task])
-    
-    if @task.save
-      flash[:notice] = 'Task Created'
-    else
-      flash[:error] = 'Task Not Created'
-    end
-    redirect_to @project
+    # render :text => params.inspect
+    @task = @project.tasks.new(params[:task])
+    @task.save
+    respond_with(@task, :layout => !request.xhr? )
   end
   
   def complete

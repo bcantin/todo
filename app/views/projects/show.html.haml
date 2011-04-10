@@ -9,16 +9,14 @@
 %h3 Stuff To Do
 
 %ul#tasks
-  - @project.tasks.sorted.incomplete.each do |task|
-    %li{:id => "task_#{task.id}", :class => "task"}
-      %span.handle= image_tag('arrow_ns.png')
-      = task.description
-      = link_to image_tag('cross.png'), project_task_path(@project, task), :confirm => 'Destroy Task ?', :method => :delete
-      = link_to image_tag('accept.png'), complete_task_path(@project, task), :method => :post
-      
+  - @incomplete_tasks.each do |task|
+  
+    = render :partial => 'tasks/task', :locals => {:task => task}
+
+
 %h3 Completed
 %ul
-  - @project.tasks.completed.each do |task|
+  - @completed_tasks.each do |task|
     %li.task
       .completed
         = task.description
@@ -26,7 +24,9 @@
 
 %hr
 
-= form_for [@project, @task] do |f|
+= form_for [@project, @task], :remote => true do |f|
+
+  .errors
   %p
     = f.text_field :description
     = f.submit
