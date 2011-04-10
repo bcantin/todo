@@ -15,10 +15,9 @@
 %h3 Completed
 %ul
   - @completed_tasks.each do |task|
-    %li.task
-      .completed
-        = task.description
-        = link_to image_tag('cross.png'), project_task_path(@project, task), :confirm => 'Destroy Task ?', :method => :delete
+    %li{:id => "task_#{task.id}", :class => 'completed'}
+      = task.description
+      = link_to image_tag('cross.png'), project_task_path(@project, task), :confirm => 'Destroy Task ?', :method => :delete, :remote => true
 
 %hr
 

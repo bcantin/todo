@@ -109,20 +109,20 @@ ul {
 li {
   margin: 10px 0px;
   padding: 5px; }
-  li .completed {
-    text-decoration: line-through;
-    color: #aaaaaa; }
 
-li.task img {
+li.task img, li.completed img {
   vertical-align: text-top; }
-li.task a {
+li.task a, li.completed a {
   float: right;
   margin-left: 5px;
   visibility: hidden; }
-li.task:hover {
+li.task:hover, li.completed:hover {
   background-color: #dddddd; }
-  li.task:hover a {
+  li.task:hover a, li.completed:hover a {
     visibility: visible; }
+
+li.completed {
+  text-decoration: line-through; }
 
 .button_to {
   display: inline-block; }
