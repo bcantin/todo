@@ -5,7 +5,7 @@
   = link_to 'Tasks', @project
 
 %h3 Notes
-%ul#notes
+%ul#notes.notes
   - @project.notes.each do |note|
     = render :partial => 'notes/note', :locals => {:note => note}
 

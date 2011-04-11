@@ -1,4 +1,5 @@
-var put_path = "#notes li#note_" + <%= @id %> + " span"
-var fetch_path = "notes " + put_path
-$(put_path).load(fetch_path)
+var update_id = "#note_" + <%= @note.id %>
+$('#notes').find(update_id).html("<%= escape_javascript(
+    render :partial => 'note', :locals => {:note => @note}
+  ) %>");
 jQuery(document).trigger('close.facebox')

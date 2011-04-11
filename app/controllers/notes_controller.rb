@@ -1,3 +1,4 @@
+include FaceboxRender
 class NotesController < ApplicationController
 
   before_filter :get_project
@@ -16,12 +17,15 @@ class NotesController < ApplicationController
 
   def edit
     @note = @project.notes.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.js { render_to_facebox }
+    end
   end
   
   def update
     @note = @project.notes.find(params[:id])
     @note.update_attributes(params[:note])
-    @id = params[:id]
     respond_with(@note, :layout => !request.xhr? )
   end
   
