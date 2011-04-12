@@ -1,0 +1,5 @@
+var update_id = "#note_" + <%= @note.id %>
+$('#notes').find(update_id).html("<%= escape_javascript(
+    render :partial => 'note', :locals => {:note => @note}
+  ) %>");
+jQuery(document).trigger('close.facebox')

@@ -2,13 +2,12 @@
 %html
   %head
     %title TODO
-    = stylesheet_link_tag 'sample'
-    = javascript_include_tag 'jquery.min', 'jquery-ui-1.8.11.custom.min', 'rails', 'application'
+    = stylesheet_link_tag 'sample', 'facebox'
+    = javascript_include_tag 'jquery.min', 'jquery-ui-1.8.11.custom.min', 'rails', 'application', 'facebox'
     = csrf_meta_tag
     = yield :javascript
     
   %body
-    
     #header
       = link_to 'PROJECTS', projects_path
       

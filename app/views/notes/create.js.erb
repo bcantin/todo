@@ -1,0 +1,25 @@
+var note_form = $('#new_note');
+
+<% if @note.errors.any? %>
+
+  // Create a list of errors
+  var errors = $('<ul />');
+
+  <% @note.errors.full_messages.each do |error| %>
+    errors.append('<li><%= escape_javascript(error) %></li>');
+  <% end %>
+
+  note_form.find('.errors').html(errors);
+
+<% else %>
+
+  $('#notes').append("<%= escape_javascript(
+      render :partial => 'note', :locals => {:note => @note}
+    ) %>");
+  
+  $('#notes li').last().effect('highlight');
+
+  note_form.find('input:text,textarea').val('');
+  note_form.find('.errors').empty();
+
+<% end %>

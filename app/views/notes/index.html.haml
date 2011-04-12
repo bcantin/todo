@@ -5,12 +5,9 @@
   = link_to 'Tasks', @project
 
 %h3 Notes
-%ul
+%ul#notes.notes
   - @project.notes.each do |note|
-    %li.task
-      = note.description
-      = link_to image_tag('cross.png'), project_note_path(@project, note), :confirm => 'Destroy Note ?', :method => :delete
-      = link_to image_tag('application_edit.png'), edit_project_note_path(@project, note)
+    = render :partial => 'notes/note', :locals => {:note => note}
 
 %hr
 
