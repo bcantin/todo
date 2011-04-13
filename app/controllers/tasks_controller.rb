@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
-  
+  include FaceboxRender
+
   before_filter :get_project
   
   respond_to :html, :js
@@ -10,6 +11,20 @@ class TasksController < ApplicationController
     respond_with(@task, :layout => !request.xhr? )
   end
   
+  def edit
+    @task = @project.tasks.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.js { render_to_facebox }
+    end
+  end
+
+  def update
+    @task = @project.tasks.find(params[:id])
+    @task.update_attributes(params[:task])
+    respond_with(@task, :layout => !request.xhr? )
+  end
+
   def complete
     @task = @project.tasks.find(params[:id])
     @task.update_attribute(:completed, true)

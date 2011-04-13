@@ -1,0 +1,6 @@
+= form_for [@project, @task], :remote => true do |f|
+
+  .errors
+  %p
+    = f.text_field :description
+    = f.submit

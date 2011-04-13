@@ -1,5 +1,6 @@
-include FaceboxRender
 class NotesController < ApplicationController
+
+  include FaceboxRender
 
   before_filter :get_project
 

@@ -1,0 +1,7 @@
+var update_id = "#task_" + <%= @task.id %>
+$('#tasks').find(update_id).replaceWith("<%= escape_javascript(
+    render :partial => 'tasks/task', :locals => {:task => @task}
+  ) %>");
+jQuery(document).trigger('close.facebox');
+
+$(update_id).effect('highlight');

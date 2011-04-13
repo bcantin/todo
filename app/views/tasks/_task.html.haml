@@ -2,4 +2,5 @@
   %span.handle= image_tag('arrow_ns.png')
   = task.description
   = link_to image_tag('cross.png'), project_task_path(task.project, task), :confirm => 'Destroy Task ?', :method => :delete, :remote => true
+  = facebox_link_to image_tag('application_edit.png'), :url => edit_project_task_path(task.project, task), :remote => true, :method => :get
   = link_to image_tag('accept.png'), complete_task_path(task.project, task), :method => :post, :remote => true
