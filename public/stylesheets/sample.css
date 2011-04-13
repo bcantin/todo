@@ -55,6 +55,11 @@ h1 {
 h2 {
   font-size: 2em; }
 
+h2 .counter {
+  display: inline;
+  font-size: 50%;
+  color: #666666; }
+
 h3 {
   font-size: 1.6em; }
 
@@ -106,15 +111,9 @@ ul {
   margin-left: 15px;
   margin-bottom: 20px; }
 
-ul#notes li > li {
-	margin:0;
-	padding:0;
-}
-
 li {
   margin: 10px 0px;
   padding: 5px; }
-
 
 li.task img, li.completed img {
   vertical-align: text-top; }

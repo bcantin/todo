@@ -1,8 +1,10 @@
 %h2 All Projects
 
 - @projects.each do |project|
-  %h2= link_to project.title, project
-
+  %h2
+    = link_to project.title, project
+    .counter== (#{project.tasks.incomplete.count})
+    
   %p.description
     = project.description
     = link_to 'Edit', edit_project_path(project)
