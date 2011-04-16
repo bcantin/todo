@@ -3,7 +3,7 @@ class TasksController < ApplicationController
 
   before_filter :get_project
   
-  respond_to :html, :js
+  respond_to :html, :js, :json
   
   def create
     @task = @project.tasks.new(params[:task])

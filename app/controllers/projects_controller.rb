@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   
-  respond_to :html, :js
+  respond_to :html, :js, :json
   
   def index
     respond_with(@projects = Project.all)
@@ -25,6 +25,8 @@ class ProjectsController < ApplicationController
     @incomplete_tasks = @project.tasks.sorted.incomplete
     @completed_tasks  = @project.tasks.completed.order('updated_at DESC')
     @task = @project.tasks.new
+    
+    # respond_with(@incomplete_tasks)
   end
   
   def edit

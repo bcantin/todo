@@ -4,7 +4,7 @@ class NotesController < ApplicationController
 
   before_filter :get_project
 
-  respond_to :html, :js
+  respond_to :html, :js, :json
 
   def index
     @note = @project.notes.new
