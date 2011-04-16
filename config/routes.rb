@@ -1,4 +1,8 @@
+require 'api_v1'
+
 Todo::Application.routes.draw do
+  
+  match '/api/v1/*other' => ApiV1
   
   resources :projects do
     resources :tasks do

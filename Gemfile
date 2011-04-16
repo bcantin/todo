@@ -1,6 +1,9 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.6'
+
+gem 'sinatra'
+
 gem 'sqlite3'
 gem 'jquery-rails'
 gem 'jrails'
