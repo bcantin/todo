@@ -27,6 +27,7 @@ class ProjectsController < ApplicationController
     @task = @project.tasks.new
     
     # respond_with(@incomplete_tasks)
+    # respond_with([@incomplete_tasks,@completed_tasks])
   end
   
   def edit

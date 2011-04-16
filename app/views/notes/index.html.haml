@@ -6,7 +6,7 @@
 
 %h3 Notes
 %ul#notes.notes
-  - @project.notes.each do |note|
+  - @notes.each do |note|
     = render :partial => 'notes/note', :locals => {:note => note}
 
 %hr

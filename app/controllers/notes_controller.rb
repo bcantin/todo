@@ -7,7 +7,9 @@ class NotesController < ApplicationController
   respond_to :html, :js, :json
 
   def index
-    @note = @project.notes.new
+    @note  = @project.notes.new
+    
+    respond_with(@notes = @project.notes)
   end
   
   def create
@@ -32,9 +34,9 @@ class NotesController < ApplicationController
   
   def destroy
     @note = @project.notes.find(params[:id])
-      Note.destroy(@note) if @note
-      @id = params[:id]
-      respond_with(@note, :layout => !request.xhr? )
+    Note.destroy(@note) if @note
+    @id = params[:id]
+    respond_with(@note, :layout => !request.xhr? )
   end
 
 end
