@@ -9,6 +9,8 @@ gem 'haml'
 
 gem 'acts_as_list'
 
+gem 'grape'
+
 group :development, :test do
   gem 'annotate'
   
