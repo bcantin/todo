@@ -1,0 +1,10 @@
+// remove the old
+var destroyed_id = "#task_" + <%= @task.id %>
+$(destroyed_id).remove();
+
+// render the new
+$('#tasks').append("<%= escape_javascript(
+    render :partial => 'task', :locals => {:task => @task}
+  ) %>");
+
+$('#tasks li').last().effect('highlight');

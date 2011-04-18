@@ -31,6 +31,12 @@ class TasksController < ApplicationController
     respond_with(@task, :layout => !request.xhr?)
   end
 
+  def retask
+    @task = @project.tasks.find(params[:id])
+    @task.update_attribute(:completed, false)
+    respond_with(@task, :layout => !request.xhr?)
+  end
+
   def destroy
     @task = @project.tasks.find(params[:id])
     Task.destroy(@task) if @task
