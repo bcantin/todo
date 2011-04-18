@@ -1,4 +1,4 @@
 %li{:id => "task_#{task.id}", :class => 'completed'}
   = task.description
-  = link_to image_tag('cross.png'), project_task_path(task.project, task), :confirm => 'Destroy Task ?', :method => :delete, :remote => true
+  = link_to image_tag('cross.png'), project_task_path(task.project, task), :method => :delete, :remote => true
   = link_to image_tag('undo.png'),  retask_task_path(task.project, task), :method => :post, :remote => true
