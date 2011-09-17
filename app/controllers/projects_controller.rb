@@ -3,7 +3,8 @@ class ProjectsController < ApplicationController
   respond_to :html, :js
   
   def index
-    respond_with(@projects = Project.all)
+    @projects = Project.all
+    respond_with(@projects)
   end
   
   def new

@@ -1,11 +1,11 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.6'
+gem 'rails', '3.0.10'
 gem 'sqlite3'
 gem 'jquery-rails'
 gem 'jrails'
 
-gem 'haml'
+gem 'haml', '~> 3.1'
 
 gem 'acts_as_list'
 
